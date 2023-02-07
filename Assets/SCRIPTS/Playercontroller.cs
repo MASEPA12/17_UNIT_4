@@ -27,8 +27,9 @@ public class Playercontroller : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("POWERup"));
+        if (other.gameObject.CompareTag("POWERup"))
         {
+            StartCoroutine(PowerUpCountDown());
             hasPowerUp = true;
             Destroy(other.gameObject);
         }
@@ -36,7 +37,7 @@ public class Playercontroller : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Enemy") && hasPowerUp)
+        if(other.gameObject.CompareTag("ENEMY") && hasPowerUp)
         {
             Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
             Vector3 awayFromPlayer = (other.gameObject.transform.position - transform.position).normalized;
@@ -45,5 +46,9 @@ public class Playercontroller : MonoBehaviour
 
 
     }
-
+    private IEnumerator PowerUpCountDown()
+    {
+        yield return new WaitForSeconds(6);
+        hasPowerUp = false;
+    }
 }
