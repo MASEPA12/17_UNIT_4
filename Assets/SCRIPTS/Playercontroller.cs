@@ -11,6 +11,8 @@ public class Playercontroller : MonoBehaviour
 
     public float powerUpforce;
     public bool hasPowerUp;
+
+    public GameObject[] powerUPindicators;
     
 
     void Start()
@@ -48,7 +50,13 @@ public class Playercontroller : MonoBehaviour
     }
     private IEnumerator PowerUpCountDown()
     {
-        yield return new WaitForSeconds(6);
+        for(int i = 0; i < powerUPindicators.Length; i++)
+        {
+            powerUPindicators[i].SetActive(true);
+            yield return new WaitForSeconds(2);
+            powerUPindicators[i].SetActive(false);
+
+        }
         hasPowerUp = false;
     }
 }

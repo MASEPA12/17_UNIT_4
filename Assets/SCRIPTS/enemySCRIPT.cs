@@ -19,5 +19,10 @@ public class enemySCRIPT : MonoBehaviour
         //cream un nou vector que serà es recorregut en tot moment de player (A) i enemy (B) --> AB
         Vector3 direction = (player.transform.position - transform.position).normalized;
         _rigidbody.AddForce(direction * speed);
+
+        if(transform.position.y < -3)
+        {
+            Destroy(gameObject);
+        }
     }
 }
