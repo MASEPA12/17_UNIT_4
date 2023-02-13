@@ -36,12 +36,18 @@ public class Playercontroller : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        if (other.gameObject.CompareTag("powerUP2"))
+        {
+
+        }
     }
     private void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.CompareTag("ENEMY") && hasPowerUp)
         {
             Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
+
+                                                          //enemyposition -  playerposition
             Vector3 awayFromPlayer = (other.gameObject.transform.position - transform.position).normalized;
             enemyRigidbody.AddForce(awayFromPlayer * powerUpforce, ForceMode.Impulse);
         }

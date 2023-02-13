@@ -7,10 +7,14 @@ public class enemySCRIPT : MonoBehaviour
     public float speed;
     private Rigidbody _rigidbody;
     private GameObject player;
+    private int limit = -3;
 
-    void Start()
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+    }
+    void Start()
+    {
         player = GameObject.Find("PLAYER");
     }
 
@@ -20,7 +24,7 @@ public class enemySCRIPT : MonoBehaviour
         Vector3 direction = (player.transform.position - transform.position).normalized;
         _rigidbody.AddForce(direction * speed);
 
-        if(transform.position.y < -3)
+        if(transform.position.y < limit)
         {
             Destroy(gameObject);
         }
