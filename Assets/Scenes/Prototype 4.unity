@@ -216,7 +216,9 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1851236299087385895, guid: 668cf0634352f81438982b4b1eafe4f5, type: 3}
   enemiesInScene: 0
   enemiesPerWave: 1
-  powerupPrefab: {fileID: 1729945580980676, guid: 7bc251a7285632341a306c70a8f1cfbe, type: 3}
+  powerupPrefab:
+  - {fileID: 1729945580980676, guid: 7bc251a7285632341a306c70a8f1cfbe, type: 3}
+  - {fileID: 0}
 --- !u!4 &533496618
 Transform:
   m_ObjectHideFlags: 0
@@ -249,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4172430691150986, guid: 7bc251a7285632341a306c70a8f1cfbe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.65
+      value: -4.296
       objectReference: {fileID: 0}
     - target: {fileID: 4172430691150986, guid: 7bc251a7285632341a306c70a8f1cfbe, type: 3}
       propertyPath: m_LocalPosition.y

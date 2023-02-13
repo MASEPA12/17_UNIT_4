@@ -56,6 +56,7 @@ public class Playercontroller : MonoBehaviour
     }
     private IEnumerator PowerUpCountDown()
     {
+        //if --> mirar si tenc es q toca i dsps augmenta scale
         for(int i = 0; i < powerUPindicators.Length; i++)
         {
             powerUPindicators[i].SetActive(true);
@@ -63,6 +64,7 @@ public class Playercontroller : MonoBehaviour
             powerUPindicators[i].SetActive(false);
 
         }
+        //escala original
         hasPowerUp = false;
     }
 }
